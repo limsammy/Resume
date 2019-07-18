@@ -1,0 +1,209 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008-2011 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{enumerate}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{tocloft}
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.99}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+%\definecolor{shadecolorB}{RGB}{100,255,127}
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\fboxsep}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large SAMUEL HARRISON LIM} &
+ \\ \textbf{Email:} \href{mailto:limsammy1@gmail.com}{limsammy1@gmail.com} &  \textbf{Github:} \href{https://github.com/limsammy}{limsammy} \\
+\textbf{Mobile:} +1 (503) 939-2923
+&\textbf{LinkedIn:} \href{https://www.linkedin.com/in/samuelharrisonlim}{samuelharrisonlim}\\
+\end{tabular*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUMMARY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{8pt}
+\justify
+Backend focused web developer with a strong interest in data driven programming. With 8+ years experience in multiple different programming languages I am now transitioning from pure web development to enterprise grade automation, machine learning predictability models in conjunction with big data, and all things InfoSec.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item 
+	\ressubheading{CTO/Head of Botting Division}{Varfaj Partners - NYC (remote)}{Lead Developer}{April 2019 -- Present}
+	\begin{itemize}
+		\resitem{Wrote a sophisticated data crawler + bot for a very popular social media platform in the context of using that data to generate marketing leads. Written purely in \textbf{Python} with over 5k lines of code. This bot uses a headless FireFox browser with \textbf{Selenium} to emulate human activity in order to \textbf{sustain long term bot viability} and avoid rigorous bot detection. I wrote many additional utilities to be re-used for other platforms in the future, including things like https proxy rotations, random user agent generation, simulated mouse movements, random delays between actions, and more.}
+		\resitem{Developed self reliance and accountability by personally handling project management and setting my own deadlines and milestones using Pivotal Tracker.}
+		\resitem{Implemented continuous integration for pushing new builds to the production server in a clean and efficient manner.}
+		\resitem{Learned and implemented Linux's Systemd service/job manager to run the app concurrently during "normal" hours with backup safety features to restart the app if a crash occurs, as well as very verbose logging to understand errors and crashes}
+		\resitem{Implemented Python's \textbf{SQLAlchemy} and \textbf{Postgres DB} to store scraped data for future querying and analysis.}
+		\resitem{Implemented a simple filtering system using a static list of keywords/phrases to only pull leads relevant to the firm.}
+		\resitem{Used several API's for this project, including \href{https://www.deathbycaptcha.com/}{\textit{DeathByCaptcha}} for reCaptcha automation, \href{https://api.slack.com/}{\textit{SlackAPI}} to push data to sales team, and the \href{https://developers.google.com/gmail/api/}{\textit{Gmail API}} in order to generate accounts as well as bypass the email-pin security checkpoint.}
+	\end{itemize}
+
+\item 
+	\ressubheading{Full Stack Web Developer}{Blockparty.co - Boulder, CO}{Sole and Lead Developer}{Feb 2018 - July 2018}
+	\begin{itemize}
+		\resitem{Designed and built a "reddit-esque" system with a scoreboard, to Solidity for Ethereum development. Project was written in pure \textbf{Ruby on Rails} web development with \textbf{JS} and \textbf{React} for an Ethereum backed crypto community platform. Constructed everything from \textbf{relational databases} to complex \textbf{querying}.}
+		\resitem{Hand-rolled authentication system with \href{https://metamask.io/}{\textit{Metamask}} and bCrypt. Used ActiveRecord as my ORM to interface with the Postgresql db. Pivotal tracker to manage.}
+	\end{itemize}
+
+%
+
+\item 
+	\ressubheading{Middleware Laravel(PHP) Developer}{Life.ai}{Intern}{December 2017 - August 2018}
+	\begin{itemize}
+		\resitem{My roles in this company primary consisted of collaborating with data scientists to build a \textbf{NLP} powered \textbf{support chatbot} using Microsoft's \textbf{BotFramework} and brainstorming product ideas. To be able to do this effectively, I had to be intimately familiar with their \textbf{legacy backend} which was written in PHP's \textbf{Laravel}- a language I picked up quickly because of it's similarity to rails.}
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Technical Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ORIGINAL
+%	\vspace{-2pt}
+%	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+%		\multicolumn{2}{c}{Programming
+%		\cftdotfill{\cftdotsep}Python, Java, Java Bytecode,
+%		  //Bash, Ruby, SQL, C\#, Rust (minimum experience, learning currently), JS, Node, React, Laravel, .NET}\\
+%		\multicolumn{2}{c}{Reverse Engineering/PenTesting
+%		\cftdotfill{\cftdotsep}Ida Pro, dex2jar apk exploitation, JS, Burp, MitmProxy, SQLi, XSS, privilege escalation, API authentication, deobfuscation (using AST transforms, jscodeshift) (context: anti bot agents, licensed .NET software)}\\
+%		\multicolumn{2}{c}{Machine Learning
+%		\cftdotfill{\cftdotsep}Keras - Tensorflow, clustering, scikit-learn}\\
+%		\multicolumn{2}{c}{Data Analysis
+%		\cftdotfill{\cftdotsep}NumPy, SciPy, Pandas}\\
+%		\multicolumn{2}{c}{Tools/Utilities
+%		\cftdotfill{\cftdotsep}Github, GH Issues, Agile workflow, \href{SSDL}{https://www.owasp.org/index.php/OWASP_Secure_Software_Development_Lifecycle_Project}, Pivotal Tracker, Trello, Slack, Code Reviews}\\
+%5		\vphantom{E}
+%\end{tabular*}
+%\end{center}\vspace*{-16pt}
+
+\vspace{-2pt}
+	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+		\textbf{Programming:} Python, Java, Java Bytecode,
+		  Bash, Ruby, SQL, C\#, Rust (minimum experience,\\ learning currently), JS, Node, React, Laravel, .NET\\
+		\textbf{InfoSEC:} OWASP knowledge, sqlmap, Ida Pro, dex2jar apk exploitation, JS, Burp, MitmProxy, SQLi,\\ XSS, privilege escalation, API authentication, deobfuscation (using AST transforms, jscodeshift)\\ (context: anti bot agents, licensed .NET software), passive + active information gathering and analysis \\
+		\textbf{Machine Learning:} Keras - Tensorflow, clustering, scikit-learn\\
+		\textbf{Data Analysis:} NumPy, SciPy, Pandas\\
+		\textbf{Tools/Utilities:} Github, GH Issues, Agile workflow, \href{https://www.owasp.org/index.php/OWASP_Secure_Software_Development_Lifecycle_Project}{\textit{SSDL}}, Pivotal Tracker, Trello, Slack, Code Reviews\\
+		\vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-16pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Notable Projects:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+    \ressubheading{WeapDetect}{\href{https://github.com/KyleMoore1/weapon-detect}{https://github.com/KyleMoore1/weapon-detect}}{Sole Developer}{March 2019}
+    \begin{itemize}
+        \resitem{Three day hackathon submission. Real-time object detection powered by OpenCV and an AI model trained with a comprehensive dataset of guns and knives. The objective of this project is in the scope of security footage and early-warning detection systems for active shootings/stabbings.}
+        \resitem{KyleMoore was my frontend partner. Check commits to see my contributions :)}
+    \end{itemize}
+    \ressubheading{Industrial Solutions Website}{\href{industrial-solutions.net}{https://industrial-solutions.net}}{Sole Developer}{March 2019 - Current (Monthly Upkeep)}
+    \begin{itemize}
+        \resitem{Simple business landing page written in Ruby and Jekyll. Responsive. Please ignore the current state of the email box, that is just a proof of concept :)}
+        \resitem{In charge of marketing, SEO, email campaigns, social media, email campaigs, and devops too}
+    \end{itemize}
+    \ressubheading{Headcount}{\href{https://iamchrissmith.io/headcount/}{https://iamchrissmith.io/headcount/}}{Co-Developer}{2017}
+    \begin{itemize}
+        \resitem{This project was given to my partner and I before we were introduced to the ActiveRecord ORM and Rails. Our objective was to write our own ORM in plain old Ruby and spit out analytics on a given set of public Colorado school district information. The backend was written in Ruby, and the frontend in raw HTML/CSS.}
+        \resitem{Source: \href{https://github.com/iamchrissmith/headcount}{https://github.com/iamchrissmith/headcount}}
+        \end{itemize}
+    \ressubheading{CWS Sales Manager}{\href{http://cwsmanager.herokuapp.com/}{http://cwsmanager.herokuapp.com/}}{Sole Developer}{June, 2017 - Septmber, 2017}
+    \begin{itemize}
+        \resitem{The first complex project I built in terms of database relationships between the many tables. Developed with RoR and Bootstrap.}
+        \resitem{Credentials: admin@admin.com/adminadmin}
+        \resitem{Source: \href{https://github.com/limsammy/project_cws}{https://github.com/limsammy/project_cws}}
+    \end{itemize}
+    \ressubheading{Multi-Ecommerce Shop Manager}{\href{https://readery.herokuapp.com/}{https://readery.herokuapp.com/}}{Co-Developer}{November, 2017 - December, 2017}
+    \begin{itemize}
+        \resitem{An app that allows an owner to manage multiple different ecommerce stores. Test coverage is very high with a whopping 50+ feature tests, includes Stripe API, file uploading, business analytics API, and more.}
+        \resitem{Source: \href{https://github.com/limsammy/Readery---Ecommerce}{Source: https://github.com/limsammy/Readery---Ecommerce}}
+    \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{Turing School of Software and Design}{Denver, CO}{Backend Engineer}{June 2017 - December 2017}
+	\begin{itemize}
+		\resitem{As I have been coding since I was 11, this short and rigorous program taught me correct OOP principles, ingrained in me the power of collaborative programming, and cemented my fundamentals in HTTP architecture, database design, and networking. For this project we used Ruby on Rails and Postgres.}
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Awards, Grants \& Honors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\vspace{-2pt}
+%	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+%		\multicolumn{2}{c}{Accepted into the OSU Accelerated Masters Platform in Applied Mathematics
+%		\cftdotfill{\cftdotsep}2018}\\
+%		\multicolumn{2}{c}{Dean's List at Oregon State University
+%		\cftdotfill{\cftdotsep}2017 -- 2018}\\
+%		\multicolumn{2}{c}{URISC Research Grant (\$4000) 
+%		\cftdotfill{\cftdotsep} 2017}\\
+%		\multicolumn{2}{c}{University of British Columbia Entrance Scholarship (\$10000 - Declined)
+%		\cftdotfill{\cftdotsep}2016}\\
+%		\multicolumn{2}{c}{University of British Columbia Music Performance Scholarship (\$2000 - Declined)
+%		\cftdotfill{\cftdotsep}2016}\\
+%		\multicolumn{2}{c}{Oregon State University Music Performance Scholarship (\$5500 - Declined)
+%		\cftdotfill{\cftdotsep}2016}\\
+%		\multicolumn{2}{c}{Finalist at the Intel International Science and Engineering Fair \cftdotfill{\cftdotsep}2016}\\
+%		\multicolumn{2}{c}{Jane-Goodall Science Symposium Winner \cftdotfill{\cftdotsep}2016}\\
+%		\multicolumn{2}{c}{ISEF Research Grant (\$1500) \cftdotfill{\cftdotsep}2015 -- 2016}\\
+%		\multicolumn{2}{c}{Participant at the Intel International Science and Engineering Fair \cftdotfill{\cftdotsep}2015}\\
+%		\vphantom{E}
+%\end{tabular*}
+%\end{center}\vspace*{-16pt}
+\end{document}
